@@ -1,9 +1,0 @@
-
-JS/TS : 
-html : npm install -g vscode-langservers-extracted
-python :
-rust : rustup component add rust-analyzer 
-Go : go install golang.org/x/tools/gopls@latest
-
-
-
