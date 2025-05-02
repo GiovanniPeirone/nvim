@@ -148,9 +148,30 @@ require("lazy").setup({
             vim.g.go_imports_autosave = 1   -- autoagrega imports
             vim.g.go_fmt_autosave = 1       -- autoformato al guardar
         end,
+    },
+    {
+        "nvim-telescope/telescope.nvim",
+        tag = "0.1.5",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        config = function()
+            require("telescope").setup({
+                defaults = {
+                    layout_config = {
+                        prompt_position = "top",
+                    },
+                    sorting_strategy = "ascending",
+                    winblend = 10,
+                },
+            })
+
+            -- 🔑 Atajos útiles
+            local builtin = require("telescope.builtin")
+            vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope: Buscar archivos" })
+            vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope: Buscar texto (live_grep)" })
+            vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope: Buscar buffers" })
+            vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope: Buscar ayuda" })
+        end,
     }
-
-
 })
 
 
