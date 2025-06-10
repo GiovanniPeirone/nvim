@@ -1,4 +1,7 @@
 
+-- [[ Colorscheme ]]
+vim.cmd("colorscheme sorbet")
+
 -- [[ Opciones básicas ]]
 vim.opt.number = true            -- Números de línea
 vim.opt.relativenumber = true    -- Números relativos

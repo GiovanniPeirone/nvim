@@ -3,12 +3,20 @@
 require("lazy").setup({
     -- 🌅 Colorscheme Solarized
     {
-        "rose-pine/neovim",
-        name = "rose-pine",
+        "windwp/nvim-autopairs",
+        event = "InsertEnter",
         config = function()
-            vim.cmd("colorscheme rose-pine-main")
-        end
+            require("nvim-autopairs").setup()
+        end,
     },
+
+    --{
+    --    "rose-pine/neovim",
+    --    name = "rose-pine",
+    --    config = function()
+    --        vim.cmd("colorscheme rose-pine-main")
+    --    end
+    --},
 
     -- ⚙️ Mason para gestionar LSPs
     {
